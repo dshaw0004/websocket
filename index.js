@@ -1,6 +1,6 @@
-import socket from 'socket.io'
+const { Server } = require('socket.io');
 
-const io = socket(4040, {
+const io = new Server(server, {
     cors: {
         origin: [
             'http://localhost:5173',
@@ -10,7 +10,7 @@ const io = socket(4040, {
             "*"
         ]
     }
-})
+});
 console.log("sock")
 io.on('connection', socket => {
     // console.log(socket.id)
@@ -34,3 +34,6 @@ io.on('connection', socket => {
    });
 
 })
+server.listen(4040, () => {
+  console.log('server running at http://localhost:4040');
+});
