@@ -16,7 +16,9 @@ let server = app.listen(port, () => {
 });
 
 const io = new Server(server, { cors: { origin: [
-  "*"
+    'https://anonylchat.web.app/',
+    'http://localhost:5173',
+
 ] } });
 
 console.log("sock")
